@@ -43,7 +43,7 @@ function generatePassword() {
   if (!passwordLength) {
     alert ("Required value");
 
-  } else if (passwordLength < 8 && passwordLength > 128); {
+  } else if (passwordLength < 8 && passwordLength > 128) {
     passwordLength = prompt ("You must choose a charcter between 8 and 128.");
       console.log ("Passwork length" + passwordLength);
 
@@ -56,8 +56,8 @@ function generatePassword() {
       console.log = ("numbers" + confirmNumber);
     confirmSpecial = confirm ('Click OK to confirm special characters in your password.');
       console.log = ("Special characters" + confirmSpecial);
-  };
-}
+  }
+};
 
 // Receiving no answer
 if (!confirmUpper && !confirmLower && !confirmNumber && !confirmSpecial) {
@@ -112,7 +112,7 @@ if (!confirmUpper && !confirmLower && !confirmNumber && !confirmSpecial) {
   userSelection = number.concat(specialChar);
     console.log(userSelection);
 
-// Choosing one option
+// Choosing one option:
 } else if (confirmUpper) {
   userSelection = upperCase;
     console.log(userSelection);
@@ -126,6 +126,7 @@ if (!confirmUpper && !confirmLower && !confirmNumber && !confirmSpecial) {
   userSelection = specialChar;
     console.log(userSelection);
 };
+
 
 
 
