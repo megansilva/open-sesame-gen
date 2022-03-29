@@ -63,13 +63,13 @@ function generatePassword() {
 if (!confirmUpper && !confirmLower && !confirmNumber && !confirmSpecial) {
   userSelection = alert ("You MUST choose a criteria for your password.");
 
-// Receiving all four options
+// Choosing all four options
 } else if (confirmUpper && confirmLower && confirmNumber && confirmSpecial) {
   userSelection = upperCase.concat(lowerCase, number, specialChar);
     console.log(userSelection);
   
-// Receiving three opetions:
-//Upper && lower && number
+// Choosing three opetions:
+//Upper && lower && number 
 //Upper && lower && special characters
 //Upper && number && special characters
 //Lower && number && special characters 
@@ -86,14 +86,48 @@ if (!confirmUpper && !confirmLower && !confirmNumber && !confirmSpecial) {
   userSelection = lowerCase.concat(number, specialChar);
     console.log(userSelection);
 
-// Receiving two options:
+// Choosing two options:
 //Upper && lower
 //Upper && number
 //Upper && special characters
 //Loweer && number
 //Lower && special characters
 //Number && special characters
-} else if ()
+} else if (confirmUpper && confirmLower) {
+  userSelection = upperCase.concat(lowerCase);
+    console.log(userSelection);
+} else if (confirmUpper && confirmNumber) {
+  userSelection = lowerCase.concat(number);
+    console.log(userSelection);
+} else if (confirmUpper && confirmSpecial) {
+  userSelection = upperCase.concat(specialChar);
+    console.log(userSelection);
+} else if (confirmLower && confirmNumber) {
+  userSelection = lowerCase.concat(number);
+    console.log(userSelection);
+} else if (confirmLower && confirmSpecial) {
+  userSelection = lowerCase.concat(specialChar);
+    console.log(userSelection);
+} else if (confirmNumber && confirmSpecial) {
+  userSelection = number.concat(specialChar);
+    console.log(userSelection);
+
+// Choosing one option
+} else if (confirmUpper) {
+  userSelection = upperCase;
+    console.log(userSelection);
+} else if (confirmLower) {
+  userSelection = lowerCase;
+    console.log(userSelection);
+} else if (confirmNumber) {
+  userSelection = number;
+    console.log(userSelection);
+} else if (confirmSpecial) {
+  userSelection = specialChar;
+    console.log(userSelection);
+};
+
+
 
 
 
