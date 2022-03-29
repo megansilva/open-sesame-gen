@@ -38,3 +38,28 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword); 
 
 //Start fumctions
+function generatePassword() {
+  passwordLength = prompt ("How many characters would you like your password to contain? Choose between 8 and 128 characters.");
+  console.log("Passwork length" + passwordLength);
+
+  if (passwordLength) {
+    alert ("Required value");
+
+  } else if (passwordLength < 8 && passwordLength > 128); {
+    passwordLength = prompt ("You must choose a charcter between 8 and 128.");
+      console.log ("Passwork length" + passwordLength);
+
+  } else {
+    confirmUpper = confirm ("Click OK to confirm including uppercase letters in your password.");
+      console.log ("Upper case" + confirmUpper);
+    confirmLower = confirm ("Click OK to confirm including lowercase letters in your password.");
+      console.log ("Lower case" + confirmLower);
+    confirmNumber = confirm ("Click OK to confirm including numberic characters in your password.");
+      console.log = ("numbers" + confirmNumber);
+    confirmSpecial = confirm ('Click OK to confirm special characters in your password.');
+      console.log = ("Special characters" + confirmSpecial);
+  };
+}
+
+
+
