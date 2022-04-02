@@ -86,73 +86,99 @@ function generatePassword() {
   if (userOptions.confirmUpper && userOptions.confirmLower && userOptions.confirmNumber && userOptions.confirmSpecial) {
     userSelection = userSelection.concat(upperCase, lowerCase, number, specialChar);
 
+  if (confirmUpper) {
+    userSelection += upperCase;
+  }
+  if (confirmLower) {
+    userSelection += lowerCase;
+  }
+  if (confirmNumber) {
+    userSelection += number;
+  }
+  if (confirmSpecial) {
+    userSelection += specialChar;
+  };
 
+
+  // if (userOptions.confirmUpper) {
+  //   userSelection = userSelection.concat(upperCase);
+  // }
+  // if (userOptions.confirmLower) {
+  //   userSelection = userSelection.concat(lowerCase);
+  // }
+  // if (userOptions.confirmNumber) {
+  //   userSelection = userSelection.concat(number);
+  // }
+  // if (userOptions.confirmSpecial) {
+  //   userSelection = userSelection.concat(specialChar);
+  // };
+  
     // Choosing three opetions:
     // Upper && lower && number
     // Upper && lower && special characters
     // Upper && number && special characters
     // Lower && number && special characters
-  } else if (confirmUpper && confirmLower && confirmNumber) {
-    userSelection = upperCase.concat(lowerCase, number);
-    console.log(userSelection);
-  } else if (confirmUpper && confirmLower && confirmSpecial) {
-    userSelection = upperCase.concat(lowerCase, specialChar);
-    consolelog(userSelection);
-  } else if (confirmUpper && confirmNumber && confirmSpecial) {
-    userSelection = upperCase.concat(number, specialChar);
-    console.log(userSelection);
-  } else if (confirmLower && confirmNumber && confirmSpecial) {
-    userSelection = lowerCase.concat(number, specialChar);
-    console.log(userSelection);
+  // } else if (confirmUpper && confirmLower && confirmNumber) {
+  //   userSelection = upperCase.concat(lowerCase, number);
+  //   console.log(userSelection);
+  // } else if (confirmUpper && confirmLower && confirmSpecial) {
+  //   userSelection = upperCase.concat(lowerCase, specialChar);
+  //   consolelog(userSelection);
+  // } else if (confirmUpper && confirmNumber && confirmSpecial) {
+  //   userSelection = upperCase.concat(number, specialChar);
+  //   console.log(userSelection);
+  // } else if (confirmLower && confirmNumber && confirmSpecial) {
+  //   userSelection = lowerCase.concat(number, specialChar);
+  //   console.log(userSelection);
 
-    // Choosing two options:
-    //Upper && lower
-    //Upper && number
-    //Upper && special characters
-    //Loweer && number
-    //Lower && special characters
-    //Number && special characters
-  } else if (confirmUpper && confirmLower) {
-    userSelection = upperCase.concat(lowerCase);
-    console.log(userSelection);
-  } else if (confirmUpper && confirmNumber) {
-    userSelection = lowerCase.concat(number);
-    console.log(userSelection);
-  } else if (confirmUpper && confirmSpecial) {
-    userSelection = upperCase.concat(specialChar);
-    console.log(userSelection);
-  } else if (confirmLower && confirmNumber) {
-    userSelection = lowerCase.concat(number);
-    console.log(userSelection);
-  } else if (confirmLower && confirmSpecial) {
-    userSelection = lowerCase.concat(specialChar);
-    console.log(userSelection);
-  } else if (confirmNumber && confirmSpecial) {
-    userSelection = number.concat(specialChar);
-    console.log(userSelection);
+  //   // Choosing two options:
+  //   //Upper && lower
+  //   //Upper && number
+  //   //Upper && special characters
+  //   //Loweer && number
+  //   //Lower && special characters
+  //   //Number && special characters
+  // } else if (confirmUpper && confirmLower) {
+  //   userSelection = upperCase.concat(lowerCase);
+  //   console.log(userSelection);
+  // } else if (confirmUpper && confirmNumber) {
+  //   userSelection = lowerCase.concat(number);
+  //   console.log(userSelection);
+  // } else if (confirmUpper && confirmSpecial) {
+  //   userSelection = upperCase.concat(specialChar);
+  //   console.log(userSelection);
+  // } else if (confirmLower && confirmNumber) {
+  //   userSelection = lowerCase.concat(number);
+  //   console.log(userSelection);
+  // } else if (confirmLower && confirmSpecial) {
+  //   userSelection = lowerCase.concat(specialChar);
+  //   console.log(userSelection);
+  // } else if (confirmNumber && confirmSpecial) {
+  //   userSelection = number.concat(specialChar);
+  //   console.log(userSelection);
 
-    // Choosing one option:
-  } else if (confirmUpper) {
-    userSelection = upperCase;
-    console.log(userSelection);
-  } else if (confirmLower) {
-    userSelection = lowerCase;
-    console.log(userSelection);
-  } else if (confirmNumber) {
-    userSelection = number;
-    console.log(userSelection);
-  } else if (confirmSpecial) {
-    userSelection = specialChar;
-    console.log(userSelection);
-  };
+  //   // Choosing one option:
+  // } else if (confirmUpper) {
+  //   userSelection = upperCase;
+  //   console.log(userSelection);
+  // } else if (confirmLower) {
+  //   userSelection = lowerCase;
+  //   console.log(userSelection);
+  // } else if (confirmNumber) {
+  //   userSelection = number;
+  //   console.log(userSelection);
+  // } else if (confirmSpecial) {
+  //   userSelection = specialChar;
+  //   console.log(userSelection);
+  // };
 
-  var generatePassword = []; 
+  var generatePassword = [];
 
   for (var i = 0; i < userOptions.passwordLength; i++) {
     var allSelected = Math.floor(Math.random() * userSelection.length);
     generatePassword.push(allSelected);
-    return password;  
   };
-  
-}
+
+  return generatePassword.join("");
+}};
 
